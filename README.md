@@ -5,7 +5,7 @@
 *[Usage](#usage)
 *[Credits](#credits)
 *[License](#license)
-*[Contact] (#contact)
+*[Contact](#contact)
 
 # Description
 This project is a culmination of my understanding of front-end third party apis such as Jquery, Moment.js and  server-side apis such as Open Weather API  by creating a weather forecast application for public and personal use . For more information on how to use it, please refer to the instructions below.
