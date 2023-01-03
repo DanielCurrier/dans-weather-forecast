@@ -8,7 +8,7 @@
 *[Contact] (#contact)
 
 # Description
-This project is a culmination of my understanding of front-end third party apis such as Jquery, Moment.js and Open Weather API in addition to server-side apis by creating a weather forecast application for public and personal use . For more information on how to use it, please refer to the instructions below.
+This project is a culmination of my understanding of front-end third party apis such as Jquery, Moment.js and  server-side apis such as Open Weather API  by creating a weather forecast application for public and personal use . For more information on how to use it, please refer to the instructions below.
 ## Installation
 n/a
 ## Instructions
