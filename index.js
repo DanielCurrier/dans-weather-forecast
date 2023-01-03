@@ -1,5 +1,4 @@
-// Establishing elements
-// city search elements
+// Establishing elements city search elements
 var searchHistoryList = $('#search-history-list');
 var searchCityInput = $("#search-city");
 var searchCityButton = $("#search-city-button");
@@ -23,8 +22,7 @@ $("#current-date").text("(" + currentDate + ")");
 // Check if search history exists when page loads
 initalizeHistory();
 showClear();
-// Hitting enter while input is focused will trigger
-// value added to search history
+// Hitting enter while input is focused will trigger value added to search history
 $(document).on("submit", function () {
     event.preventDefault();
     // Grab value entered into search bar
@@ -33,8 +31,7 @@ $(document).on("submit", function () {
     searchHistory(searchValue);
     searchCityInput.val("");
 });
-// Clicking the search button will trigger
-// value added to search history
+// Clicking the search button will trigger value added to search history
 searchCityButton.on("click", function (event) {
     event.preventDefault();
     // Grab value entered into search bar
@@ -51,10 +48,8 @@ clearHistoryButton.on("click", function () {
     listArray();
     $(this).addClass("hide");
 });
-// Clicking on a button in the search history sidebar
-// will populate the dashboard with info on that city
+// Clicking on a button in the search history sidebar will populate the dashboard with info on that city
 searchHistoryList.on("click", "li.city-btn", function (event) {
-    // console.log($(this).data("value"));
     var value = $(this).data("value");
     currentConditionsRequest(value);
     searchHistory(value);
@@ -86,8 +81,6 @@ function currentConditionsRequest(searchValue) {
             url: UVurl,
             method: "GET"
         }).then(function (response) {
-            // console.log("UV call: ")
-            // console.log(response);
             UVindex.text(response.value);
         });
         var countryCode = response.sys.country;
@@ -136,8 +129,7 @@ function currentConditionsRequest(searchValue) {
 function searchHistory(searchValue) {
     // If there are characters entered into the search bar
     if (searchValue) {
-        // Place value in the array of cities
-        // if it is a new entry
+        // Place value in the array of cities if it is a new entry
         if (cityList.indexOf(searchValue) === -1) {
             cityList.push(searchValue);
             // List all of the cities in user history
@@ -145,21 +137,18 @@ function searchHistory(searchValue) {
             clearHistoryButton.removeClass("hide");
             weatherContent.removeClass("hide");
         } else {
-            // Remove the existing value from
-            // the array
+            // Remove the existing value from the array
             var removeIndex = cityList.indexOf(searchValue);
             cityList.splice(removeIndex, 1);
             // Push the value again to the array
             cityList.push(searchValue);
-            // list all of the cities in user history
-            // so the old entry appears at the top
-            // of the search history
+            // list all of the cities in user history so the old entry appears at the top of the search history bar.
             listArray();
             clearHistoryButton.removeClass("hide");
             weatherContent.removeClass("hide");
         }
     }
-    console.log(cityList);
+
 }
 
 // List the array into the search history sidebar
